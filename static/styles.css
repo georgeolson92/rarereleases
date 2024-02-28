@@ -1,0 +1,82 @@
+		.navbar .site-title {
+			font-size: 1.8em;
+			color: white;
+			font-weight: bold;
+		}
+		
+		.navbar {
+			background-color: rgba(0,100,255);
+			margin-bottom: 40px;
+		}
+		
+		.gramophone {
+			max-width: 400px;
+		}
+		
+		.nav-tabs {
+			border-bottom: none;
+		}
+		
+		.nav-wrapper {
+			max-width: 696px;
+			width: 100%;
+			margin: 0px auto;
+		}
+		
+		.artist-link {
+  	 		position: relative !important;
+  	 		box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.6);
+  	 		width: 200px;
+  	 		height: 200px;
+  	 		background-size: cover;
+  	 	}
+  	 	
+  	 	.active .artist-link {
+  	 		box-shadow: inset 0 0 0 1000px rgba(0,150,255,0.6);
+  	 	}
+  	 	
+  	 	.artist-name {
+  	 		color: white;
+  	 		 margin: 0;
+  			position: absolute;
+  			top: 50%;
+  			-ms-transform: translateY(-50%);
+  			transform: translateY(-50%);
+			width: 100%;
+			font-weight: bold;
+			left: 0%;
+			font-size: 1.8em;
+  	 	}
+  	 	
+  	 	.discogs-finds {
+  	 		margin: 20px;
+  	 	}
+  	 	
+  	 	.discogs-finds .row {
+  	 		padding-top: 50px;
+  	 		padding-bottom: 50px;
+  	 	}
+  	 	
+  	 	.discogs-finds .release {
+  	 		padding-bottom: 80px;
+  	 		padding-right: 20px;
+  	 	}
+  	 	
+  	 	.nav-tabs .nav-link.active, .nav-tabs .nav-link{
+  	 		border: none;
+  	 	}
+  	 	
+  	 	.discogs-finds .release .img-fluid {
+  	 		float: left;
+  	 		margin-right: 20px;
+  	 	}
+  	 	
+  	 	
+  	 	.discogs-finds .release a {
+  	 		float: none;
+			display: block;
+  	 	}
+  	 	
+  	 	.padded-paragraph {
+  	 		margin: 10% 20%;
+  	 	}

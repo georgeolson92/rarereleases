@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+{% block content %}
+		<div class="intro text-center">
+		<p class="error">{{ message }}</p>
+		<h1>Hello, {{ user_profile.name }}!</h2>
+		<a href="{{ user_profile.profile_url }}" target="_blank">View your profile on Spotify</a>
+		<p class="padded-paragraph">{% if top_list|count > 0 %}Nice music collection! We took a look at your top 3 artists in the last 4 weeks and matched them with data at Discogs to find some cool treasures that you might not have even known existed! {% else %} Looks like you don't have enough artist info in your spotify library, check out some more music and try again later! {% endif %}</p>
+		</div>
+
+
+		<nav class="nav-wrapper">
+  			<div class="nav nav-tabs artists" id="nav-tab" role="tablist">
+				{%for i in range (0, top_list|length) %}
+					<button class="nav-link{% if i == 0 %} active {% endif %}" id="nav-{{ i }}-tab" data-bs-toggle="tab" data-bs-target="#nav-{{ i }}" type="button" role="tab" aria-controls="nav-{{ i }}" aria-selected="true">
+						<div class="artist-link" style="background-image:url({{ top_list[i].img }})">
+							<span class="artist-name">{{ top_list[i].name }}</span>
+						</div>
+					</button>
+				{%endfor%}
+			</div>
+		</nav>
+
+		<div class="tab-content" id="nav-tabContent">
+			{%for j in range (0, album_list|length) %}
+				<div class="tab-pane fade {% if j == 0 %} show active {% endif %}" id="nav-{{ j }}" role="tabpanel" aria-labelledby="nav-{{ j }}-tab">
+					<div class="discogs-finds">
+						<h2>Here's some releases from {{top_list[j].name}} that you might not find on Spotify:</h2>
+						<div class="row">
+							{%for e in range (0, album_list[j]|length) %}
+
+								<div class="col-md-6 release">
+									{% if album_list[j][e].thumb %}
+										<img src="{{ album_list[j][e].thumb }}" class="img-fluid" alt="{{ album_list[j][e].title }} cover art"/>
+									{% endif %}
+									<h3>{{ album_list[j][e].title }}</h3>
+									<p>Format: {{ album_list[j][e].format }}</p>
+									<p>Released: {{ album_list[j][e].year }}</p>
+									<a href="https://discogs.com/release/{{ album_list[j][e].id }}" target="_blank">View on Discogs</a>
+								</div>
+
+							{%endfor%}
+						</div>
+					</div>
+				
+				</div>
+			{%endfor%}
+		</div>
+{% endblock %}
+

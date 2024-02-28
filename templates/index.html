@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% block content %}
+	<div class="login text-center">
+		<h1>Welcome to Rare Releases</h1>
+		<img src="{{ url_for('static', filename='gramophone.png') }}" class="img-fluid gramophone"/>
+		<p>Find obscure releases from your current favorite artists in your Spotify library!</p>
+		<p>This app does not save any of your data but will request access to your profile & top artists.</p>
+		<a href="{{ url }}"><button type="button" class="btn btn-primary">To begin, log in with Spotify!</button></a>
+	</div>
+{% endblock %}
