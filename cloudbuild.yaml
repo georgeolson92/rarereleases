@@ -1,3 +1,6 @@
+options:
+  logging: CLOUD_LOGGING_ONLY
+  
 steps:
   # Build the Docker image and push it to Google Container Registry
   - name: 'gcr.io/cloud-builders/docker'
