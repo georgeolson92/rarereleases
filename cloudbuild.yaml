@@ -11,7 +11,7 @@ steps:
       [
         'run', 'deploy', 'final',
         '--image', 'gcr.io/$PROJECT_ID/final',
-        '--service-account', 'rarereleases2@$PROJECT_ID.iam.gserviceaccount.com',
+        '--service-account', 'rarereleases2@rare-releases.iam.gserviceaccount.com',
         '--set-env-vars',
         'SPOTIFY_CLIENT_ID=ed8309594627474eb0c9365e265901c2,SPOTIFY_CLIENT_SECRET=52886e431d8c4a589c59f0594b020bf5,DISCOGS_TOKEN=dbnLETavMdFapPlyVIzZrGOsLmhqfRtsyglVpFMs',
         '--platform', 'managed',
