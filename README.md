@@ -16,7 +16,7 @@
 6. 	$ export DISCOGS_TOKEN=(value)
 7. 	$ python app.py
 
-## Deploying in Google cloud:
+## Manually Deploying in Google Cloud:
 
 1. Set up service account in Google with 'Cloud Run Developer' permissions
 1. clone to your GCloud Shell
