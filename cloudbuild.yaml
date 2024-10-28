@@ -1,0 +1,21 @@
+steps:
+  # Build the Docker image and push it to Google Container Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/final', '.']
+
+  # Submit the build to Cloud Run using the specified service account and environment variables
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: 'gcloud'
+    args:
+      [
+        'run', 'deploy', 'final',
+        '--image', 'gcr.io/$PROJECT_ID/final',
+        '--service-account', 'georgeolson92@$PROJECT_ID.iam.gserviceaccount.com',
+        '--set-env-vars',
+        'SPOTIFY_CLIENT_ID=ed8309594627474eb0c9365e265901c2,SPOTIFY_CLIENT_SECRET=52886e431d8c4a589c59f0594b020bf5,DISCOGS_TOKEN=dbnLETavMdFapPlyVIzZrGOsLmhqfRtsyglVpFMs',
+        '--platform', 'managed',
+        '--region', 'us-west1' # Specify your region, e.g., 'us-central1'
+      ]
+
+images:
+  - 'gcr.io/$PROJECT_ID/final'
