@@ -1,0 +1,8 @@
+__pycache__/*/
+env/*/
+env/pyvenv.cfg
+__pycache__/api_config.cpython-311.pyc
+__pycache__/index.cpython-311.pyc
+__pycache__/api_config.cpython-311.pyc
+__pycache__/index.cpython-311.pyc
+__pycache__/spotify_results.cpython-311.pyc
